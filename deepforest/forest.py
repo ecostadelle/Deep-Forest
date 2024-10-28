@@ -444,7 +444,7 @@ class BaseForest(MultiOutputMixin, BaseEnsemble, metaclass=ABCMeta):
         random_state = check_random_state(self.random_state)
         n_jobs, _, _ = _partition_estimators(self.n_estimators, self.n_jobs)
 
-        trees = [
+        self.estimators_ = [
             self._make_estimator(append=False, random_state=random_state)
             for i in range(self.n_estimators)
         ]
@@ -476,7 +476,7 @@ class BaseForest(MultiOutputMixin, BaseEnsemble, metaclass=ABCMeta):
                 is_classifier(self),
                 lock,
             )
-            for i, t in enumerate(trees)
+            for t in self.estimators_
         )
         # Collect newly grown trees
         for feature, threshold, children, value in rets:
