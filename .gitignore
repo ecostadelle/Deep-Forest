@@ -1,6 +1,7 @@
 *.pyc
 *.dat
 *.c
+*.cpp
 *.pyd
 *.so
 *.mmap
@@ -23,3 +24,6 @@ dist/
 deep_forest.egg-info/
 cache/
 tmp/
+.venv
+cython_debug
+.gitignore
