@@ -62,10 +62,11 @@ if __name__ == "__main__":
         ],
         python_requires=">=3.7",
         install_requires=[
-            "numpy>=1.14.6",
-            "scipy>=1.1.0",
-            "joblib>=0.11",
-            "scikit-learn>=1.0",
+            "numpy==1.19.5",
+            "scikit-learn==0.23.2",
+            "scipy==1.6.0",
+            "joblib==1.1.1",
+            "Cython==0.29.37",
         ],
         setup_requires=["cython"],
     )
